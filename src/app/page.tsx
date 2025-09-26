@@ -1,5 +1,7 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <div> Hello World </div>
+    <main style={{ padding: 24 }}>
+       <h1 className="text-2xl font-bold text-red-300">Hello World</h1>
+    </main>
   );
 }
