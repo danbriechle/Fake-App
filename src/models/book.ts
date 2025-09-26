@@ -19,7 +19,7 @@ export class BookModel {
     this.genre = raw.genre;
     this.description = raw.description;
     this.isbn = raw.isbn;
-    this.image = `https://picsum.photos/seed/${encodeURIComponent(seed)}/480/320`
+    this.image = `https://picsum.photos/seed/${encodeURIComponent(this.seed)}/480/320`
     this.published = raw.published;
     this.publisher = raw.publisher;
   }
