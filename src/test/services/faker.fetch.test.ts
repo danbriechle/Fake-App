@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest"
+const { BookModel } = await import("@/models/book")
 
 const FIXTURE = { status: "OK", code: 200, total: 3, data: [{
       title: "mip moop",
@@ -50,6 +51,7 @@ describe("fakerService.fetchBooks", () => {
       title:  "mip moop",
       author:  "woopy",
     })
+    expect(json.data[0]).toBeInstanceOf(BookModel)
   })
 
   it("can return a specific quantity of the books resource", async () => {
