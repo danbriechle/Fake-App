@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest"
+const { BookModel } = await import("@/models/book")
 
 const FIXTURE = { status: "OK", code: 200, total: 3, data: [{
       title: "mip moop",
@@ -46,19 +47,16 @@ describe("fakerService.fetchBooks", () => {
   it("can be called called for the books resource", async () => {
     const { fetchBooks } = await import("@/services/faker")
     const json = await fetchBooks()
-    expect(json.code).toEqual(200)
-    expect(json.status).toEqual('OK')
     expect(json.data[0]).toMatchObject({
       title:  "mip moop",
       author:  "woopy",
     })
+    expect(json.data[0]).toBeInstanceOf(BookModel)
   })
 
   it("can return a specific quantity of the books resource", async () => {
     const { fetchBooks } = await import("@/services/faker")
     const json = await fetchBooks(3)
-    expect(json.code).toEqual(200)
-    expect(json.status).toEqual('OK')
-    expect(json.total).toEqual(3)
+    expect(json.data).toHaveLength(3)
   })
 })
