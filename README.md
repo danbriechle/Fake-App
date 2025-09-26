@@ -1,4 +1,5 @@
 # FakeApp
+![Uploading Screenshot 2025-09-26 at 12.33.31 PM.png…]()
 
 A tiny **Next.js + TypeScript** app that pulls **books** from the Faker API and displays them in a simple grid. It includes a minimal home page and a books index page.
 
