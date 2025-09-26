@@ -1,7 +1,9 @@
+import Link from "next/link"
+
 export default function HomePage() {
   return (
     <main style={{ padding: 24 }}>
-       <h1 className="text-2xl font-bold text-red-300">Hello World</h1>
+        <Link href="/resources/books" className="inline-flex items-center rounded border px-3 py-2 mt-4"> Books </Link>
     </main>
-  );
+  )
 }
