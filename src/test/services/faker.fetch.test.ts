@@ -9,4 +9,12 @@ describe("fakerService.fakerFetch", () => {
     expect(json.code).toEqual(200)
     expect(json.status).toEqual('OK')
   })
+
+  it("can return a specific quantity of the books resource", async () => {
+    const { fakerFetch } = await import("@/services/faker")
+    const json = await fakerFetch('books', 3)
+    expect(json.code).toEqual(200)
+    expect(json.status).toEqual('OK')
+    expect(json.total).toEqual(3)
+  })
 })
